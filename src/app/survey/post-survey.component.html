@@ -1,1 +1,56 @@
-<p>post-survey works!</p>
+
+
+<div class="container" >
+    <h3>Complete the Survey</h3>
+    <form action="" method="POST" >
+
+       <div class="form-group">
+           <label for="id" class="control-label"> ¿ Las charlas donde usted participó cumplieron con sus expectativas?.</label>
+           <select id="ratingQ1" name="ratingQ1" class="form-control col-md-5" [(ngModel)] ="survey.ratingQ1">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="4">5</option>
+        </select>  
+       </div>
+
+       <div class="form-group">
+        <label for="id" class="control-label">¿Los expositores mostraron tener dominio del tema?.</label>
+        <select id="ratingQ2" name="ratingQ2" class="form-control col-md-5" [(ngModel)] ="survey.ratingQ2">
+         <option value="1" selected>1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="4">5</option>
+        </select>  
+      </div>
+
+      <div class="form-group">
+        <label for="id" class="control-label">¿Las instalaciones del evento fueron confortables para usted?.</label>
+        <select id="ratingQ3" name="ratingQ3" class="form-control col-md-5" [(ngModel)] ="survey.ratingQ3">
+         <option value="1" selected>1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="4">5</option>
+        </select>  
+      </div>
+
+      <div class="form-group">
+        <label for="id" class="control-label">¿Tiene algún comentario para los organizadores? (Comentario).</label>
+        <textarea  id="ratingQ4" name="ratingQ4" [(ngModel)] ="survey.ratingQ4" rows="10" cols="120">                             
+        </textarea>
+      </div>
+       
+       
+        <div class="panel-footer">
+           <button class="btn btn-primary" (click)="save()">Save</button>    
+        </div>
+ 
+      
+      
+   </form>
+ </div>
+    
+

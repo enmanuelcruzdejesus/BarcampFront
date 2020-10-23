@@ -23,7 +23,7 @@ export class SurveyService {
     return this.httpClient.get<Survey>(`${HttpClientHelper.baseURL}/survey/getById`+id,this.httpOptions);
   }
 
-  saveProduct(survey: Survey): Observable<any>{
+  save(survey: Survey): Observable<any>{
     return this.httpClient.post<Survey>(`${HttpClientHelper.baseURL}/survey/save`,survey);
   }
 

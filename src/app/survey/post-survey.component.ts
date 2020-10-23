@@ -1,4 +1,7 @@
+import { Survey } from './../models/survey';
+import { SurveyService } from './../services/survey.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-survey',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostSurveyComponent implements OnInit {
 
-  constructor() { }
+   survey  = new Survey();
+
+  constructor(private service: SurveyService, private router: Router) { }
 
   ngOnInit(): void {
+
+   
+  }
+
+  save(){
+    this.service.save(this.survey).subscribe((res)=>{
+
+      console.log(res);
+
+    },(err)=>{
+      console.log(err);
+    });
+
+    
+    
   }
 
 }
