@@ -21,11 +21,12 @@ export class PostSurveyComponent implements OnInit {
 
   save(){
     this.service.save(this.survey).subscribe((res)=>{
-
-      console.log(res);
+      
+      console.log(JSON.stringify(this.survey));
+      
 
     },(err)=>{
-      console.log(err);
+      console.error(err);
     });
 
     

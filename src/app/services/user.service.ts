@@ -18,15 +18,15 @@ export class UserService {
   
   setToken(token: string){
   
-    localStorage.setItem('user',token);
+    localStorage.setItem('token',token);
   }
 
   loggedIn(): boolean{
-    return !!localStorage.getItem('user');
+    return !!localStorage.getItem('token');
   }
 
   login(user: User): Observable<any>{
-    return this.httpClient.post<any>(`${HttpClientHelper.baseURL}/user/login`,user,this.httpOptions);
+    return this.httpClient.post<any>(`${HttpClientHelper.baseURL}/user/login/`,user,this.httpOptions);
   }
 
   getCurrentUser(): User{
@@ -51,21 +51,19 @@ export class UserService {
 
 
   getAllUsers(): Observable<User[]>{
-    return this.httpClient.get<User[]>(`${HttpClientHelper.baseURL}/user/getAll`,this.httpOptions);
+    return this.httpClient.get<User[]>(`${HttpClientHelper.baseURL}/user/getAll/`,this.httpOptions);
   }
 
   registerUser(user: User): Observable<any>{
           
-    return this.httpClient.post<any>(`${HttpClientHelper.baseURL}/user/save`,user,this.httpOptions);
+    return this.httpClient.post<any>(`${HttpClientHelper.baseURL}/user/save/`,user,this.httpOptions);
   
   }
   getUserById(id: number){
 
-    return this.httpClient.get<User>(`${HttpClientHelper.baseURL}/user/getById`+id,this.httpOptions);
+    return this.httpClient.get<User>(`${HttpClientHelper.baseURL}/user/getById/`+id,this.httpOptions);
   }
 
-  save(user: User): Observable<any>{
-    return this.httpClient.post<User>(`${HttpClientHelper.baseURL}/user/save`,user);
-  }
+
 
 }

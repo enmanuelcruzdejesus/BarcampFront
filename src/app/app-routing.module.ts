@@ -1,3 +1,4 @@
+import { AuthguardService } from './services/authguard.service';
 import { SurveyChartsComponent } from './survey/survey-charts.component';
 import { PostSurveyComponent } from './survey/post-survey.component';
 import { RegisterComponent } from './user/register.component';
@@ -11,9 +12,10 @@ const routes: Routes = [
   {path: '' , redirectTo: "/post-survey" , pathMatch: 'full'},
   {path:'login' , component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'survey-list' , component: SurveyListComponent},
-  {path:'post-survey' , component: PostSurveyComponent},
-  {path: 'survey-charts' , component: SurveyChartsComponent},
+  {path: 'survey-list' , component: SurveyListComponent, canActivate: [AuthguardService]},
+  {path:'post-survey' , component: PostSurveyComponent,canActivate: [AuthguardService]},
+  {path: 'survey-charts' , component: SurveyChartsComponent,canActivate: [AuthguardService]},
+  {path: '**' , redirectTo: ''}
 ];
 
 @NgModule({

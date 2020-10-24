@@ -1,6 +1,6 @@
 
 
-<div class="containter" *ngIf="showNav()">
+<div class="containter" *ngIf="showNav()" >
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
     <a class="navbar-brand"  routerLink="/post-survey">Barcamp</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +17,7 @@
           <a class="nav-link"  routerLink="/survey-list">Suveys <span class="sr-only">(current)</span></a>
         </li>
         
-        <li class="nav-item" *ngIf="userLoggedIn()">
+        <li class="nav-item" *ngIf="isAdminUser()">
           <a class="nav-link" routerLink="/survey-charts">Charts</a>
         </li>
         <li class="nav-item" *ngIf="userLoggedIn()">

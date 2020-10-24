@@ -15,12 +15,11 @@ export class AppComponent {
 
   showNav(): boolean {
 
-    // if(this.getCurrentUrl() ==='/login' || this.getCurrentUrl() === '/register')
-    // return false;
+    if(this.getCurrentUrl() ==='/login' || this.getCurrentUrl() === '/register')
+    return false;
 
-    return true;
 
-    // return this.service.loggedIn();
+    return this.service.loggedIn();
 
   }
 
@@ -29,8 +28,12 @@ export class AppComponent {
   }
   
   userLoggedIn(): boolean{
-    // return this.service.loggedIn(); 
-    return true;   
+    return this.service.loggedIn(); 
+   
+  }
+
+  isAdminUser(): boolean{
+    return this.service.getCurrentUser().role === "ADMIN";
   }
 
 

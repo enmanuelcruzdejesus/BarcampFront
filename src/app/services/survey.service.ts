@@ -15,16 +15,16 @@ export class SurveyService {
 
   constructor(private httpClient: HttpClient) { }
   getSurverys(): Observable<Survey[]>{
-    return this.httpClient.get<Survey[]>(`${HttpClientHelper.baseURL}/survey/getAll`,this.httpOptions);
+    return this.httpClient.get<Survey[]>("/survey/getAll",this.httpOptions);
   }
 
   getSurveyById(id: number){
 
-    return this.httpClient.get<Survey>(`${HttpClientHelper.baseURL}/survey/getById`+id,this.httpOptions);
+    return this.httpClient.get<Survey>("/survey/getById"+id,this.httpOptions);
   }
 
   save(survey: Survey): Observable<any>{
-    return this.httpClient.post<Survey>(`${HttpClientHelper.baseURL}/survey/save`,survey);
+    return this.httpClient.post<Survey>("/survey/save",survey);
   }
 
 }
