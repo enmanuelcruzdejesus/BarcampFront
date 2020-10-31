@@ -1,1 +1,30 @@
-<p>survey-list works!</p>
+<div class="container">
+    <h2>Surveys</h2>
+    <p></p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Q1</th>
+                <th>Q3</th>
+                <th>Q3</th>
+                <th>Q4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let survey of surveys">
+               <td>{{survey.id}}</td>
+               <td>{{survey.ratingQ1}}</td>
+               <td>{{survey.ratingQ2}}</td>
+               <td>{{survey.ratingQ3}}</td>
+               <td>{{survey.ratingQ4}}</td>
+               <!-- <td>
+                    <button  class="btn btn-primary" (click)="edit(invoice)">Edit</button>
+               </td> -->
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-success" (click)="goBack()" >Return</button>
+</div>
+
+

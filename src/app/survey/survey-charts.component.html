@@ -1,1 +1,35 @@
-<p>survey-charts works!</p>
+<p>Survey Chart</p>
+<div id="divChart">
+    <canvas id="mychart" baseChart
+       [datasets]="barChartData1"
+       [labels]="barChartsLabels"
+       [options]="barChartOptions"
+       [legend]="barChartLegend"
+       [chartType]="barChartType">
+
+    </canvas>
+
+</div>
+<div id="divChart2">
+    <canvas id="mychart2" baseChart
+       [datasets]="barChartData2"
+       [labels]="barChartsLabels"
+       [options]="barChartOptions"
+       [legend]="barChartLegend"
+       [chartType]="barChartType">
+
+    </canvas>
+
+</div>
+
+<div id="divChart3">
+    <canvas id="mychart3" baseChart
+       [datasets]="barChartData3"
+       [labels]="barChartsLabels"
+       [options]="barChartOptions"
+       [legend]="barChartLegend"
+       [chartType]="barChartType">
+
+    </canvas>
+
+</div>
